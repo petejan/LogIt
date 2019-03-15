@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project LogIt">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="/Users/pete/eclipse-workspace"/>
+    <property name="dir.jarfile" value="${dir.buildfile}"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/dist/LogIt.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="org.imos.abos.EventLog"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${dir.jarfile}/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/lib/jssc.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/lib/nmea.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/lib/postgresql-9.4-1201.jdbc4.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${dir.jarfile}/lib/RXTXcomm.jar"/>
+           <!-- <fileset dir="${dir.jarfile}"/> -->
+        </jar>
+    </target>
+</project>
